@@ -18,6 +18,7 @@ A Vagrant box with Ansible provisioning for setting up a Vim-based Golang develo
    ```bash
    sudo apt-get install ansible/trusty-backports
    ```
+
    *(if you ubuntu version is "trusty", otherwise, replace it with your appropriate version)*
 3. Install Vagrant, by first downloadng the proper .deb file from [vagrantup.com](https://www.vagrantup.com/downloads.html)
 4. ... and then installing it with:<br>
