@@ -10,18 +10,19 @@ A Vagrant box with Ansible provisioning for setting up a Vim-based Golang develo
 
 ### Installing the requirements in Ubuntu (tested with 14.04)
 
-1. Install Virtualbox:<br>
+1. Install Virtualbox:
 	```bash
 	sudo apt-get install virtualbox
 	```
-2. Install a recent version of ansible:<br>
+
+2. Install a recent version of ansible:
    ```bash
    sudo apt-get install ansible/trusty-backports
    ```
 
    *(if you ubuntu version is "trusty", otherwise, replace it with your appropriate version)*
 3. Install Vagrant, by first downloadng the proper .deb file from [vagrantup.com](https://www.vagrantup.com/downloads.html)
-4. ... and then installing it with:<br>
+4. ... and then installing it with:
 	```bash
 	sudo dpkg -i <deb-file>
 	```
