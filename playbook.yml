@@ -11,3 +11,6 @@
         with_items:
           - git
           - tig
+          - vim
+  roles:
+      #- golang
