@@ -1,5 +1,14 @@
 ---
 - name: Download Golang binary distribution
   get_url:
-      url=https://storage.googleapis.com/golang/go{{ go_version }}.linux-amd64.tar.gz
-      dest={{ document_root }}/go{{ go_version }}.linux-amd64.tar.gz
+      url=https://storage.googleapis.com/golang/{{ go_archive_file }}
+      dest={{ document_root }}/{{ go_archive_file }}
+- name: Create the Go install folder
+  file:
+      path={{ go_install_dir }}
+      state=directory
+- name: Unpack the Go binary distribution
+  unarchive:
+      copy=no
+      src={{ document_root }}/{{ go_archive_file }}
+      dest=/home/vagrant

@@ -1,2 +1,4 @@
 ---
 go_version: 1.4.2
+go_archive_file: go{{ go_version }}.linux-amd64.tar.gz
+go_install_dir: /home/vagrant/go
