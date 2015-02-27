@@ -1,0 +1,41 @@
+---
+- hosts: all
+  sudo: true
+  vars:
+      document_root: /vagrant
+  pre_tasks:
+      - name: Update apt cache
+        apt: update_cache=yes cache_valid_time=3600
+      - name: Install stuff from Aptitude
+        apt: name={{ item }} state=installed
+        with_items:
+          - git
+          - tig
+      - name: Install SSH key
+        authorized_key: 
+            user=vagrant 
+            path=/home/vagrant/.ssh/authorized_keys 
+            state=present
+            key="{{ lookup('file', 'id_rsa_virtualcluster.pub') }}"
+      - name: Set up hosts files on the nodes, for easier SSH:ing between them
+        lineinfile:
+          dest=/etc/hosts
+          insertafter=^127\.0\.0\.1
+          line={{ item }}
+          state=present
+        with_items:
+          - '10.2.2.2\ master'
+          - '10.2.2.4\ slave1'
+          - '10.2.2.6\ slave2'
+      - name: Set up SSH agent and keys when logging in
+        lineinfile:
+          dest=/home/vagrant/.bashrc
+          insertafter={{ item.regexp }}
+          line={{ item.line }}
+          state=present
+        with_items:
+          - { regexp: EOF, line: '#\ VAGRANT' }
+          - { regexp: '\#\ VAGRANT', line: 'eval\ $(ssh-agent\ -s)' }
+          - { regexp: '^eval.*ssh-agent', line: 'ssh-add\ /vagrant/id_rsa_virtualcluster' }
+  roles:
+    #- scala # This role is included as an example role, to view how you can add multiple roles
