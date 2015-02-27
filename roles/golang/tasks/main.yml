@@ -1,0 +1,5 @@
+---
+- name: Download Golang binary distribution
+  get_url:
+      url=https://storage.googleapis.com/golang/go{{ go_version }}.linux-amd64.tar.gz
+      dest={{ document_root }}go{{ go_version }}.linux-amd64.tar.gz

@@ -13,4 +13,4 @@
           - tig
           - vim
   roles:
-      #- golang
+      - golang
