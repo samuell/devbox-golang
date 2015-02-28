@@ -1,9 +1,9 @@
 ---
-- name: Install go-specific apt packages
-  sudo: true
-  apt: name={{ item }} state=latest
-  with_items:
-    - vim-gocomplete
+#- name: Install go-specific apt packages
+#  sudo: true
+#  apt: name={{ item }} state=latest
+#  with_items:
+#    - vim-gocomplete
 - name: Download Golang binary distribution
   get_url:
       url=https://storage.googleapis.com/golang/{{ go_archive_file }}
@@ -21,17 +21,24 @@
 - name: Add go path settings in .bashrc_mods
   lineinfile: dest=/home/vagrant/.bashrc_mods line="{{ item }}" insertafter=EOF
   with_items:
-    - 'export GOROOT=~/opt/go'
-    - 'export GOPATH=~/code/go'
-    - 'export PATH=~/opt/go/bin:$PATH'
-    - 'export PATH=~/code/go/bin:$PATH'
+    - 'export GOROOT={{ go_root }}'
+    - 'export GOPATH={{ go_path }}'
+    - 'export PATH={{ go_root }}/bin:$PATH'
+    - 'export PATH={{ go_path }}/bin:$PATH'
 - name: Create go code folder
   file:
-    dest=/home/vagrant/code/go/src/github.com/{{ github_user }}
+    dest={{ go_path }}/src/github.com/{{ github_user }}
     state=directory
     recurse=yes
     owner=vagrant
     group=vagrant
+- name: Install gocode
+  command: >
+      go get -u github.com/nsf/gocode
+  environment:
+      GOPATH: "{{ go_path }}"
+      GOROOT: "{{ go_root }}"
+      PATH: "{{ go_root }}/bin:{{ go_path }}/bin:/usr/bin:/bin"
 - name: Check out vim-go
   git:
     repo=https://github.com/fatih/vim-go.git
