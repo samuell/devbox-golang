@@ -1,4 +1,4 @@
-# Golang-Vansible
+# Golang-Vagrant-Ansible
 
 A Vagrant box with Ansible provisioning for setting up a Vim-based Golang development environment.
 
@@ -33,8 +33,8 @@ A Vagrant box with Ansible provisioning for setting up a Vim-based Golang develo
 #### Clone the github repository:
 
 ```bash
-git clone git@github.com:samuell/golang-vansible
-cd golang-vansible
+git clone git@github.com:samuell/golang-vagrant-ansible
+cd golang-vagrant-ansible
 ```
 
 #### Bring up the VM
@@ -48,6 +48,21 @@ vagrant up
 ```bash
 vagrant ssh
 ```
+
+#### Create a repository for uploading to github:
+
+```bash
+mkcd ~/code/go/src/github/<user>/<repo>
+git init .
+```
+
+#### Now, start coding!
+
+```bash
+vim main.go
+```
+- Autocompletion will happen automatically
+- If you have turned off the YouCompleteMe role, you will get autocompletion with <C-x><C-o>
 
 ### References
 
