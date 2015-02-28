@@ -13,8 +13,9 @@
     - .vimrc
     - .vim
 - name: Create empty .bash_aliases_local file
-  command: echo "# Add local aliases here" > /home/vagrant/.bash_aliases_local
-    creates=/home/vagrant/.bash_aliases_local
+  shell:
+      echo '# Add local aliases here' > /home/vagrant/.bash_aliases_local
+      creates=/home/vagrant/.bash_aliases_local
 - name: Include .bashrc_mods in .bashrc
-  lineinfile: 
-      "dest=/home/vagrant/.bashrc line='. ~/bashrc_mods # Include local mods' insertafter=EOF"
+  lineinfile:
+      "dest=/home/vagrant/.bashrc line='. ~/.bashrc_mods # Include local mods' insertafter=EOF"
