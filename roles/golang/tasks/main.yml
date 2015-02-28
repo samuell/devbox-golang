@@ -21,4 +21,9 @@
     - 'export PATH=~/opt/go/bin:$PATH'
     - 'export PATH=~/go/bin:$PATH'
 - name: Create go code folder
-  file: dest=/home/vagrant/code/go/src/github.com/{{ github_user }}
+  file:
+    dest=/home/vagrant/code/go/src/github.com/{{ github_user }}
+    state=directory
+    recurse=yes
+    owner=vagrant
+    group=vagrant
