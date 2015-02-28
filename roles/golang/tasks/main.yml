@@ -34,7 +34,7 @@
     group=vagrant
 - name: Create go bin folder
   file:
-    dest=/home/vagrant/code/go/bin/gocode
+    dest=/home/vagrant/code/go/bin
     state=directory
 - name: Install gocode
   command: go get -u github.com/nsf/gocode
