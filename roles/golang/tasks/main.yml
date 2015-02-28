@@ -8,6 +8,7 @@
       path={{ go_install_dir }}
       state=directory
 - name: Unpack the Go binary distribution
+  sudo: true
   unarchive:
       copy=no
       src={{ document_root }}/{{ go_archive_file }}

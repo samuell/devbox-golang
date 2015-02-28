@@ -15,5 +15,5 @@
           - tig
           - vim
   roles:
-      - samuelsenv
-      - golang
+      - { role: samuelsenv, sudo: false }
+      - { role: golang, sudo: false }
