@@ -18,3 +18,4 @@
   roles:
       - { role: dotfiles, sudo: false }
       - { role: golang, sudo: false }
+      - { role: youcompleteme, sudo: false } # Comment out this to save time!!
