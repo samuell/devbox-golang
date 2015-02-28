@@ -1,0 +1,19 @@
+---
+#- name: Check out Samuel's run configuration files repo from github
+#  git: 
+#    repo=https://github.com/samuell/rc.git
+#    dest=/home/vagrant/rc
+- name: Symlink config files in rc folder
+  file: src=/home/vagrant/rc/{{ item }} dest=/home/vagrant/{{ item }} state=link
+  with_items:
+    - .bashrc_mods
+    - .bash_aliases
+    - .tmux.conf
+    - .vimrc
+    - .vim
+- name: Create empty .bash_aliases_local file
+  command: echo "# Add local aliases here" > /home/vagrant/.bash_aliases_local
+    creates=/home/vagrant/.bash_aliases_local
+- name: Include .bashrc_mods in .bashrc
+  lineinfile: 
+      "dest=/home/vagrant/.bashrc line='. ~/bashrc_mods # Include local mods' insertafter=EOF"

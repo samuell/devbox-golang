@@ -1,0 +1,5 @@
+
+# Samuel's bashrc modifications
+if [ -f ~/.bashrc_mods ]; then
+    . ~/.bashrc_mods
+fi
