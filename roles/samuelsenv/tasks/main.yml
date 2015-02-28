@@ -1,8 +1,9 @@
 ---
-#- name: Check out Samuel's run configuration files repo from github
-#  git: 
-#    repo=https://github.com/samuell/rc.git
-#    dest=/home/vagrant/rc
+- name: Check out Samuel's run configuration files repo from github
+  git:
+    repo=https://github.com/samuell/rc.git
+    dest=/home/vagrant/rc
+    update=yes
 - name: Symlink config files in rc folder
   file: src=/home/vagrant/rc/{{ item }} dest=/home/vagrant/{{ item }} state=link
   with_items:
