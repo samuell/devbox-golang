@@ -62,7 +62,7 @@ git init .
 vim main.go
 ```
 - Autocompletion will happen automatically
-- If you have turned off the YouCompleteMe role, you will get autocompletion with <C-x><C-o>
+- If you have turned off the YouCompleteMe role, you will get autocompletion with `<C-x><C-o>`
 
 ### References
 
