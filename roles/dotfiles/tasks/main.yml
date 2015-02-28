@@ -4,20 +4,6 @@
 #    repo=https://github.com/{{ github_user }}/{{ dotfiles_reponame }}.git
 #    dest=/home/vagrant/{{ dotfiles_reponame }}
 #    update=yes
-- name: Create ~/src folder
-  file: dest=/home/vagrant/src/vim-pathogen state=directory
-- name: Check out pathogen
-  git:
-      repo=https://github.com/tpope/vim-pathogen.git
-      dest=/home/vagrant/src/vim-pathogen
-      update=yes
-- name: Create ~/.vim/autoload folder
-  file: dest=/home/vagrant/.vim/autoload state=directory
-- name: Symlink pathogen into ~/.vim/autoload
-  file:
-      src=/home/vagrant/src/vim-pathogen/autoload/pathogen.vim
-      dest=/home/vagrant/.vim/autoload/pathogen.vim
-      state=link
 - name: Symlink config files in rc folder
   file: src=/vagrant/roles/dotfiles/files/{{ item }} dest=/home/vagrant/{{ item }} state=link
   with_items:
@@ -26,6 +12,20 @@
     - .tmux.conf
     - .vimrc
     - .vim
+- name: Create ~/src folder
+  file: dest=/home/vagrant/src/vim-pathogen state=directory
+- name: Check out pathogen
+  git:
+      repo=https://github.com/tpope/vim-pathogen.git
+      dest=/home/vagrant/src/vim-pathogen
+      update=yes
+- name: Create /vagrant/roles/dotfiles/files/.vim/autoload folder
+  file: dest=/vagrant/roles/dotfiles/files/.vim/autoload state=directory
+- name: Symlink pathogen into ~/.vim/autoload
+  file:
+      src=/home/vagrant/src/vim-pathogen/autoload/pathogen.vim
+      dest=/home/vagrant/.vim/autoload/pathogen.vim
+      state=link
 - name: Create empty .bash_aliases_local file
   shell:
       echo '# Add local aliases here' > /home/vagrant/.bash_aliases_local
