@@ -2,6 +2,8 @@
 
 A Vagrant box with Ansible provisioning for setting up a Vim-based Golang development environment.
 
+![Screenshot](golang-vagrant-ansible.png)
+
 ## Prerequisites
 
 - [Vagrant](https://www.vagrantup.com/)
