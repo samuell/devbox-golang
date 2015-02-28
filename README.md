@@ -77,7 +77,9 @@ Note the hostname and port number (and identity file, if you with),
 and run, for example:
 
 ```bash
-scp -i <identity-file-path> -P <portno> ~/.ssh/id_rsa_<whateveryounamedit> vagrant@<hostname>:/home/vagrant/.ssh
+scp -i <identity-file-path> -P <portno> \
+	~/.ssh/id_rsa_<whateveryounamedit> \
+	vagrant@<hostname>:/home/vagrant/.ssh/
 ```
 
 Then, sometimes, in order to get the new key activated in your shell
