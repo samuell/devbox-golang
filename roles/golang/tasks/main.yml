@@ -3,23 +3,21 @@
   get_url:
       url=https://storage.googleapis.com/golang/{{ go_archive_file }}
       dest={{ document_root }}/{{ go_archive_file }}
-- name: Create the Go install folder
+- name: Create ~/opt folder
   file:
-      path={{ go_install_dir }}
+      path=/home/vagrant/opt
       state=directory
 - name: Unpack the Go binary distribution
-  sudo: true
   unarchive:
       copy=no
       src={{ document_root }}/{{ go_archive_file }}
-      dest=/home/vagrant
+      dest=/home/vagrant/opt
 - name: Add go path settings in .bashrc_mods
   lineinfile: dest=/home/vagrant/.bashrc_mods line="{{ item }}" insertafter=EOF
   with_items:
     - 'export GOROOT=~/opt/go'
     - 'export GOPATH=~/code/go'
     - 'export PATH=~/opt/go/bin:$PATH'
-    - 'export PATH=~/go/bin:$PATH'
 - name: Create go code folder
   file:
     dest=/home/vagrant/code/go/src/github.com/{{ github_user }}
