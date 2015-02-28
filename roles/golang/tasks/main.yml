@@ -32,3 +32,16 @@
     recurse=yes
     owner=vagrant
     group=vagrant
+- name: Check out vim-go
+  git:
+    repo=https://github.com/fatih/vim-go.git
+    dest=/home/vagrant/src/vim-go
+- name: Ensure ~/.vim/bundle exists
+  file:
+    dest=/home/vagrant/.vim/bundle
+    state=directory
+- name: Symlink vim-go to .vim/bundle
+  file:
+    src=/home/vagrant/src/vim-go
+    dest=/home/vagrant/.vim/bundle/vim-go
+    state=link
