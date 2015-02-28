@@ -35,3 +35,9 @@ nmap <c-k> 4k
 nmap <c-h> 4h
 nmap <c-l> 4l
 " --------------------------------------------
+
+" --------------------------------------------
+" Pathogen setup
+" --------------------------------------------
+execute pathogen#infect()
+filetype plugin indent on
