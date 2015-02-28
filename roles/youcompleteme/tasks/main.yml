@@ -19,5 +19,5 @@
 - name: Compile YouCompleteMe binaries
   command: ./install.sh --clang-completer
     chdir=/home/vagrant/src/YouCompleteMe
-    creates=/home/vagrant/src/YouCompleteMe/python/ycm/youcompleteme.py
+    creates=/home/vagrant/src/YouCompleteMe/python/ycm/youcompleteme.pyc
 
