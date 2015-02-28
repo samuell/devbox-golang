@@ -2,7 +2,7 @@
 " Various settings
 " --------------------------------------------
 syntax on
-colorscheme samllight
+colorscheme cyanic
 set showmatch
 set ignorecase
 set showmode
