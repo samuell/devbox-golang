@@ -1,10 +1,10 @@
 ---
-- name: Install go-specific apt packages
-  sudo: true
-  apt: name={{ item }} state=latest
-  with_items:
-    - vim-syntax-go
-    - vim-gocomplete
+#- name: Install go-specific apt packages
+#  sudo: true
+#  apt: name={{ item }} state=latest
+#  with_items:
+#    - vim-syntax-go
+#    - vim-gocomplete
 - name: Download Golang binary distribution
   get_url:
       url=https://storage.googleapis.com/golang/{{ go_archive_file }}
@@ -32,10 +32,14 @@
     recurse=yes
     owner=vagrant
     group=vagrant
+- name: Install gocode
+  command: go get -u github.com/nsf/gocode
+    creates=/home/vagrant/code/go/bin/gocode
 - name: Check out vim-go
   git:
     repo=https://github.com/fatih/vim-go.git
     dest=/home/vagrant/src/vim-go
+    update=yes
 - name: Ensure ~/.vim/bundle exists
   file:
     dest=/home/vagrant/.vim/bundle
