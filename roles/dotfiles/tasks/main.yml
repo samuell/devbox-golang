@@ -1,11 +1,11 @@
 ---
-- name: Check out Samuel's run configuration files repo from github
+- name: Check out the user's run configuration files repo from github
   git:
-    repo=https://github.com/samuell/rc.git
-    dest=/home/vagrant/rc
+    repo=https://github.com/{{ github_user }}/{{ dotfiles_reponame }}.git
+    dest=/home/vagrant/{{ dotfiles_reponame }}
     update=yes
 - name: Symlink config files in rc folder
-  file: src=/home/vagrant/rc/{{ item }} dest=/home/vagrant/{{ item }} state=link
+  file: src=/home/vagrant/{{ dotfiles_reponame }}/{{ item }} dest=/home/vagrant/{{ item }} state=link
   with_items:
     - .bashrc_mods
     - .bash_aliases

@@ -3,6 +3,8 @@
   sudo: true
   vars:
       document_root: /vagrant
+      github_user: samuell
+      dotfiles_reponame: rc
   pre_tasks:
       - name: Symlink sh to bash rather than dash
         file: src=/bin/bash dest=/bin/sh state=link force=true
@@ -15,5 +17,5 @@
           - tig
           - vim
   roles:
-      - { role: samuelsenv, sudo: false }
+      - { role: dotfiles, sudo: false }
       - { role: golang, sudo: false }
