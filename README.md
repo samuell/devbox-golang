@@ -63,6 +63,31 @@ git init .
 ```bash
 vim main.go
 ```
+
+#### A tip on how you can upload your existing git ssh keys to the new vm:
+
+With the following command you can get the info you need to run scp
+against the machine:
+
+```bash
+vagrant ssh-config
+```
+
+Note the hostname and port number (and identity file, if you with),
+and run, for example:
+
+```bash
+scp -i <identity-file-path> -P <portno> ~/.ssh/id_rsa_<whateveryounamedit> vagrant@<hostname>:/home/vagrant/.ssh
+```
+
+Then, sometimes, in order to get the new key activated in your shell
+after logging in to the vm, you might need to do:
+
+```bash
+ssh-agent bash -l
+ssh-add ~/.ssh/id_rsa_<whateveryounamedit>
+```
+
 - Autocompletion will happen automatically
 - If you have turned off the YouCompleteMe role, you will get autocompletion with `<C-x><C-o>`
 
