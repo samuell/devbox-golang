@@ -1,5 +1,6 @@
 ---
 - name: Install apt packages for YouCompleteMe vim completion engine
+  sudo: yes
   apt:
     name={{ item }} state=latest
   with_items:
