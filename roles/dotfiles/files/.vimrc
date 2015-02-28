@@ -10,6 +10,11 @@ set nowrap
 set hlsearch
 set shell=/bin/sh " Needed to get at least Go autocompletion to work
 
+" Settings for using only tabs, not spaces, for indent
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+
 " --------------------------------------------
 " Convenience mappings
 " --------------------------------------------
