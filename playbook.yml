@@ -15,5 +15,5 @@
           - tig
           - vim
   roles:
-      - golang
       - samuelsenv
+      - golang

@@ -12,3 +12,10 @@
       copy=no
       src={{ document_root }}/{{ go_archive_file }}
       dest=/home/vagrant
+- name: Add go path settings in .bashrc_mods
+  lineinfile: dest=/home/vagrant/.bashrc_mods line="{{ item }}" insertafter=EOF
+  with_items:
+    - 'export GOROOT=~/opt/go'
+    - 'export GOPATH=~/code/go'
+    - 'export PATH=~/opt/go/bin:$PATH'
+    - 'export PATH=~/go/bin:$PATH'
