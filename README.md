@@ -10,6 +10,7 @@ A Vagrant box with Ansible provisioning for setting up a Vim-based Golang develo
 - [Go(lang) 1.4.2](http://golan.org/)
 - [Vim](https://github.com/Valloric/YouCompleteMe)
 - [Fatih's vim-go plugin](https://github.com/fatih/vim-go), providing syntax highlight, gocode integration for autocompletion, and more.
+    - See the [vim-go](https://github.com/fatih/vim-go) README for more info on how you can easily enable additional included features.
 - [GoCode Go completion engine](https://github.com/nsf/gocode)
 - [Valloric's YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for as-you-type completion.
 - [Git](http://git-scm.com/)
