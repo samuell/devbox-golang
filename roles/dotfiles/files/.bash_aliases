@@ -180,7 +180,7 @@ bookmark() {
 		echo "Usage: bookmark BOOKMARKNAME";
 	else
 		name=$1;
-		dir=$(basename $(pwd));
+		dir=$(pwd);
 		echo "alias c$name='c $dir'" >> ~/.bash_aliases_local
 		source ~/.bash_aliases_local
 	fi  
