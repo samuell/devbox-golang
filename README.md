@@ -4,6 +4,17 @@ A Vagrant box with Ansible provisioning for setting up a Vim-based Golang develo
 
 ![Screenshot](golang-vagrant-ansible.png)
 
+## Ingredients
+
+- [Ubuntu 14.04 "trusty" LTS 64bit base image](http://www.ubuntu.com/)
+- [Go(lang) 1.4.2](http://golan.org/)
+- [Vim](https://github.com/Valloric/YouCompleteMe)
+- [Fatih's vim-go plugin](https://github.com/fatih/vim-go)
+- [GoCode Go completion engine](https://github.com/nsf/gocode)
+- [Valloric's YouCompleteMe as-you-type completion engine](https://github.com/Valloric/YouCompleteMe)
+- Git
+- Tig commandline git repository browser
+
 ## Prerequisites
 
 - [Vagrant](https://www.vagrantup.com/)
