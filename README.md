@@ -12,8 +12,8 @@ A Vagrant box with Ansible provisioning for setting up a Vim-based Golang develo
 - [Fatih's vim-go plugin](https://github.com/fatih/vim-go), providing syntax highlight, gocode integration for autocompletion, and more.
 - [GoCode Go completion engine](https://github.com/nsf/gocode)
 - [Valloric's YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for as-you-type completion.
-- Git
-- Tig commandline git repository browser
+- [Git](http://git-scm.com/)
+- [Tig - text mode interface to git](http://jonas.nitro.dk/tig/)
 
 ## Prerequisites
 
