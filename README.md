@@ -132,7 +132,8 @@ ssh-add ~/.ssh/id_rsa_<whateveryounamedit>
 
 ## Known issues
 
-- `vagrant provision docker` does not seem to work. The initial provision upon `vagrant up` works though.
+- There are some really red message from the docker daemon when running `vagrant halt`. 
+  Everything seems to work as expected though (including the shutdown)
 - There are some red message on vagrant up, but they are nothing serious, and can be ignored for now.
 
 ## References
