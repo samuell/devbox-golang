@@ -33,7 +33,7 @@ for setting up a Vim-based Golang development environment.
 	sudo apt-get install virtualbox
 	```
 
-2. Install Docker
+2. Install Docker:
 	```bash
 	sudo apt-get install docker.io
 	```
@@ -62,13 +62,13 @@ cd golang-vagrant-ansible
 
 #### Bring up the VM
 
-With docker provider:
+With docker provider (Expect it to take at least ~8m):
 
 ```bash
 vagrant up docker
 ```
 
-With VirtualBox provider:
+With VirtualBox provider (Expect it to take at least ~20m):
 
 ```bash
 vagrant up virtualbox
