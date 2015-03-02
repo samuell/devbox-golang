@@ -15,6 +15,8 @@ A Vagrant box with Ansible provisioning for setting up a Vim-based Golang develo
 - [Valloric's YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for as-you-type completion.
 - [Git](http://git-scm.com/)
 - [Tig - text mode interface to git](http://jonas.nitro.dk/tig/)
+- [gdb - the GNU debugger](http://www.gnu.org/software/gdb)
+- [cgdb - Curses based user interface to gdb](https://cgdb.github.io)
 
 ## Prerequisites
 
