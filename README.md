@@ -35,7 +35,7 @@ for setting up a Vim-based Golang development environment.
 
 2. Install Docker
 	```bash
-	sudo apt-get install docker
+	sudo apt-get install docker.io
 	```
 
 3. Install a recent version of ansible:
