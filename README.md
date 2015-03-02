@@ -130,6 +130,11 @@ ssh-add ~/.ssh/id_rsa_<whateveryounamedit>
 - Autocompletion will happen automatically
 - If you have turned off the YouCompleteMe role, you will get autocompletion with `<C-x><C-o>`
 
+## Known issues
+
+- `vagrant provision docker` does not seem to work. The initial provision upon `vagrant up` works though.
+- There are some red message on vagrant up, but they are nothing serious, and can be ignored for now.
+
 ## References
 
 - [Vagrant & Ansible Quickstart Tutorial](http://adamcod.es/2014/09/23/vagrant-ansible-quickstart-tutorial.html)

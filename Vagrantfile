@@ -18,6 +18,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vbox.vm.provision :ansible do |ansible|
       ansible.playbook = "playbook.yml"
     end
+    # Tell the user what to do next
+	vbox.vm.provision "shell", inline: "echo 'Finished! Now try logging in with: vagrant ssh docker'"
   end
 
   # --------------------------------------------------------------------
@@ -33,11 +35,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     dkr.ssh.private_key_path = "keys/vagrantssh.key"
     dkr.ssh.username = "vagrant"
 
-    config.vm.provision :ansible do |ansible|
+    dkr.vm.provision :ansible do |ansible|
       ansible.playbook = "playbook.yml"
       ansible.extra_vars = { ansible_ssh_user: 'root' }
       #ansible.verbose = "vvvv"
     end
     dkr.vm.synced_folder ".", "/vagrant"
+    # Tell the user what to do next
+	dkr.vm.provision "shell", inline: "echo 'Finished! Now try logging in with: vagrant ssh docker'"
   end
 end
