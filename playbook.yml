@@ -12,11 +12,12 @@
       - name: Install stuff from Aptitude
         apt: name={{ item }} state=installed
         with_items:
-          - git
-          - tig
-          - vim
-          - gdb
-          - cgdb
+         - git
+         - tig
+         - vim
+         - gdb
+         - cgdb
+         - bash-completion # Not included in the docker image
   roles:
       - { role: dotfiles, sudo: false }
       - { role: golang, sudo: false }
