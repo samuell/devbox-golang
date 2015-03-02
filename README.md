@@ -1,6 +1,7 @@
-# Golang-Vagrant-Ansible
+# Golang-Vagrant-Ansible (Docker or Virtualbox)
 
-A Vagrant box with Ansible provisioning for setting up a Vim-based Golang development environment.
+A Vagrant box (Virtualbox or Docker as providers) with Ansible provisioning
+for setting up a Vim-based Golang development environment.
 
 ![Screenshot](golang-vagrant-ansible.png)
 
@@ -22,7 +23,8 @@ A Vagrant box with Ansible provisioning for setting up a Vim-based Golang develo
 
 - [Vagrant](https://www.vagrantup.com/)
 - [Ansible](http://www.ansible.com/)
-- [VirtualBox](https://www.virtualbox.org/)
+- [VirtualBox](https://www.virtualbox.org/) (Not required if you use Docker as provider!)
+- [Docker](https://www.docker.com) (Not required if you use Virtualbox as provider!)
 
 ### Installing the requirements in Ubuntu (tested with 14.04)
 
@@ -31,15 +33,20 @@ A Vagrant box with Ansible provisioning for setting up a Vim-based Golang develo
 	sudo apt-get install virtualbox
 	```
 
-2. Install a recent version of ansible:
+2. Install Docker
+	```bash
+	sudo apt-get install docker
+	```
+
+3. Install a recent version of ansible:
    ```bash
    sudo apt-get install ansible/trusty-backports
    ```
 
    *(if you ubuntu version is "trusty", otherwise, replace it with your appropriate version)*
-3. Install Vagrant, by first downloadng the proper .deb file from [vagrantup.com](https://www.vagrantup.com/downloads.html)
+4. Install Vagrant, by first downloadng the proper .deb file from [vagrantup.com](https://www.vagrantup.com/downloads.html)
 
-4. ... and then installing it with:
+5. ... and then installing it with:
 	```bash
 	sudo dpkg -i <deb-file>
 	```
@@ -55,14 +62,30 @@ cd golang-vagrant-ansible
 
 #### Bring up the VM
 
+With docker provider:
+
 ```bash
-vagrant up
+vagrant up docker
+```
+
+With VirtualBox provider:
+
+```bash
+vagrant up virtualbox
 ```
 
 #### Log in to the VM
 
+With docker provider:
+
 ```bash
-vagrant ssh
+vagrant ssh docker
+```
+
+With VirtualBox provider:
+
+```bash
+vagrant ssh virtualbox
 ```
 
 #### Create a repository for uploading to github:
@@ -84,7 +107,7 @@ With the following command you can get the info you need to run scp
 against the machine:
 
 ```bash
-vagrant ssh-config
+vagrant ssh-config [docker | virtualbox]
 ```
 
 Note the hostname and port number (and identity file, if you with),
@@ -110,4 +133,3 @@ ssh-add ~/.ssh/id_rsa_<whateveryounamedit>
 ### References
 
 - [Vagrant & Ansible Quickstart Tutorial](http://adamcod.es/2014/09/23/vagrant-ansible-quickstart-tutorial.html)
-- [Vagrant Virtual Machine Cluster](http://jessesnet.com/development-notes/2014/vagrant-virtual-machine-cluster)
