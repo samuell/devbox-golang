@@ -130,6 +130,6 @@ ssh-add ~/.ssh/id_rsa_<whateveryounamedit>
 - Autocompletion will happen automatically
 - If you have turned off the YouCompleteMe role, you will get autocompletion with `<C-x><C-o>`
 
-### References
+## References
 
 - [Vagrant & Ansible Quickstart Tutorial](http://adamcod.es/2014/09/23/vagrant-ansible-quickstart-tutorial.html)
