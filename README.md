@@ -6,6 +6,37 @@ for setting up a Vim-based Golang development environment.
 
 ![Screenshot](golang-vagrant-ansible.png)
 
+## Update: Optional build script of latest Go 1.5 with the new cross-compilation support now included!
+
+As [blogged by Dave Cheney](http://dave.cheney.net/2015/03/03/cross-compilation-just-got-a-whole-lot-better-in-go-1-5), cross-compilation
+to different platforms is now (in the latest Go 1.5 development version) as simple as setting two environment variables and
+running go build!
+
+To let us laymen test this out easily, we have included an ansible role (aka "build script") for the latest Go 1.5
+in this repo. To activate it, just open up the `playbook.yml` file and uncomment the row `- golang-1.5`, and instead comment out
+the line saying `- golang`, before running `vagrant up docker` or `vagrant up virtualbox`.
+
+So, instead of looking like this:
+
+```yaml
+  roles:
+	- { role: dotfiles, sudo: false }
+    - { role: golang, sudo: false }
+   #- { role: golang-1.5, sudo: false }
+    - { role: youcompleteme, sudo: false } # Comment out this to save time!!
+```
+
+... it should look like this:
+
+```yaml
+  roles:
+	- { role: dotfiles, sudo: false }
+   #- { role: golang, sudo: false }
+    - { role: golang-1.5, sudo: false }
+    - { role: youcompleteme, sudo: false } # Comment out this to save time!!
+```
+(You might also consider commenting out the "YouCompleteMe" step to start with, if you want to play around with this quickly)
+
 ## Ingredients
 
 - [Ubuntu 14.04 "trusty" LTS 64bit base image](http://www.ubuntu.com/)
@@ -133,7 +164,7 @@ ssh-add ~/.ssh/id_rsa_<whateveryounamedit>
 
 ## Known issues
 
-- There are some really red message from the docker daemon when running `vagrant halt`. 
+- There are some really red message from the docker daemon when running `vagrant halt`.
   Everything seems to work as expected though (including the shutdown)
 - There are some red message on vagrant up, but they are nothing serious, and can be ignored for now.
 
