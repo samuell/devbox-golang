@@ -2,6 +2,7 @@
 - hosts: all
   sudo: true
   vars:
+      home_dir: /home/vagrant
       document_root: /vagrant
       github_user: samuell
   pre_tasks:
@@ -21,4 +22,5 @@
   roles:
       - { role: dotfiles, sudo: false }
       - { role: golang, sudo: false }
+     #- { role: golang-1.5, sudo: false }
       - { role: youcompleteme, sudo: false } # Comment out this to save time!!
