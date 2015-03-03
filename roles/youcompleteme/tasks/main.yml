@@ -10,14 +10,14 @@
 - name: Check out YouCompleteMe
   git:
     repo=https://github.com/Valloric/YouCompleteMe.git
-    dest=/home/vagrant/src/YouCompleteMe
+    dest={{ home }}/src/YouCompleteMe
 - name: Symlink YouCompleteMe to ~/vim/bundle
   file:
-    src=/home/vagrant/src/YouCompleteMe
-    dest=/home/vagrant/.vim/bundle/YouCompleteMe
+    src={{ home }}/src/YouCompleteMe
+    dest={{ home }}/.vim/bundle/YouCompleteMe
     state=link
 - name: Compile YouCompleteMe binaries
   command: ./install.sh --clang-completer
-    chdir=/home/vagrant/src/YouCompleteMe
-    creates=/home/vagrant/src/YouCompleteMe/python/ycm/youcompleteme.pyc
+    chdir={{ home }}/src/YouCompleteMe
+    creates={{ home }}/src/YouCompleteMe/python/ycm/youcompleteme.pyc
 

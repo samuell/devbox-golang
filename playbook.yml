@@ -2,14 +2,16 @@
 - hosts: all
   sudo: true
   vars:
-      home_dir: /home/vagrant
+      home: /home/vagrant
       document_root: /vagrant
-      github_user: samuell
   pre_tasks:
       - name: Symlink sh to bash rather than dash
         file: src=/bin/bash dest=/bin/sh state=link force=true
-      - name: Update apt cache and upgrade
-        apt: update_cache=yes cache_valid_time=3600 upgrade=yes
+      - name: Update apt cache and optionally upgrade
+        apt:
+          update_cache=yes
+          cache_valid_time=7200
+          #upgrade=yes # Uncomment this to force full upgrade!
       - name: Install stuff from Aptitude
         apt: name={{ item }} state=installed
         with_items:
