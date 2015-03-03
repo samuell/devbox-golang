@@ -167,6 +167,8 @@ ssh-add ~/.ssh/id_rsa_<whateveryounamedit>
 - There are some really red message from the docker daemon when running `vagrant halt`.
   Everything seems to work as expected though (including the shutdown)
 - There are some red message on vagrant up, but they are nothing serious, and can be ignored for now.
+- When building Go 1.5 dev, the build will end with a lot of error messages, but that is from the
+  tests after the build. The build itself seems to work, largely.
 
 ## References
 
