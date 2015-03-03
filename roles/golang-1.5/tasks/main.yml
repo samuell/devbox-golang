@@ -1,20 +1,42 @@
 ---
-- name: Install apt packages needed for building Go 1.5
+- name: Install apt packages needed for building the latest Go (1.5)
+  sudo: true
   apt:
     name={{ item }}
   with_items:
+    - gdb-multiarch
     - gcc
+    - libc6-dev
+    - libc6-dev-i386
+    - build-essential
 - name: Create folder for Go 1.4
   file:
-    dest=/home/vagrant/src/go1.4
+    dest={{ go_root_bootstrap }}
     state=directory
 - name: Check out Go 1.4
   git:
-    repo=https://go.googlesource.com/go
-    dest=/home/vagrant/src/go1.4
+    repo={{ go_git_url }}
+    dest={{ home_dir }}/opt/go1.4
     version=release-branch.go1.4
 - name: Build Go 1.4
   command:
     ./make.bash
-    chdir=/home/vagrant/src/go1.4/src
-    creates=/home/vagrant/src/go1.4/bin/go
+    chdir={{ go_root_bootstrap }}/src
+    creates={{ go_root_bootstrap }}/bin/go
+- name: Create folder for the latest Go (1.5)
+  file:
+    dest={{ go_root }}
+    state=directory
+- name: Check out the latest Go
+  git:
+    repo={{ go_git_url }}
+    dest={{ go_root }}
+- name: Build the latest Go (1.5)
+  shell:
+    ./all.bash
+    chdir={{ go_root }}/src
+  environment:
+    'GOROOT_BOOTSTRAP': "{{ go_root_bootstrap }}"
+    'GOPATH': "{{ go_path }}"
+    'GOROOT': "{{ go_root }}"
+    'PATH': "{{ go_root }}/bin:{{ go_path }}/bin:/usr/bin:/bin"

@@ -1,4 +1,6 @@
 ---
-go_binary: /home/vagrant/opt/go/bin/go
+go_root_bootstrap: /home/vagrant/opt/go1.4
 go_root: /home/vagrant/opt/go
 go_path: /home/vagrant/code/go
+go_binary: /home/vagrant/opt/go/bin/go
+go_git_url: https://go.googlesource.com/go
