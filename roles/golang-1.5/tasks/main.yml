@@ -16,7 +16,7 @@
 - name: Check out Go 1.4
   git:
     repo={{ go_git_url }}
-    dest={{ home_dir }}/opt/go1.4
+    dest={{ home }}/opt/go1.4
     version=release-branch.go1.4
 - name: Build Go 1.4
   command:
@@ -49,7 +49,7 @@
     - 'export PATH={{ go_path }}/bin:$PATH'
 - name: Create go code folder
   file:
-    dest={{ go_path }}/src/github.com/{{ github_user }}
+    dest={{ go_path }}/src/github.com
     state=directory
     recurse=yes
     owner=vagrant

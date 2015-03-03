@@ -27,7 +27,7 @@
     - 'export PATH={{ go_path }}/bin:$PATH'
 - name: Create go code folder
   file:
-    dest={{ go_path }}/src/github.com/{{ github_user }}
+    dest={{ go_path }}/src/github.com
     state=directory
     recurse=yes
     owner=vagrant
