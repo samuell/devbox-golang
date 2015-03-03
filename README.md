@@ -35,6 +35,8 @@ So, instead of looking like this:
     - { role: golang-1.5, sudo: false }
     - { role: youcompleteme, sudo: false } # Comment out this to save time!!
 ```
+Note: Please see the "known issues" below though, about messages about  failed tests, when building!
+
 (You might also consider commenting out the "YouCompleteMe" step to start with, if you want to play around with this quickly)
 
 ## Ingredients
