@@ -40,3 +40,38 @@
     'GOPATH': "{{ go_path }}"
     'GOROOT': "{{ go_root }}"
     'PATH': "{{ go_root }}/bin:{{ go_path }}/bin:/usr/bin:/bin"
+- name: Add go path settings in .bashrc_mods
+  lineinfile: dest=/home/vagrant/.bashrc_mods line="{{ item }}" insertafter=EOF
+  with_items:
+    - 'export GOROOT={{ go_root }}'
+    - 'export GOPATH={{ go_path }}'
+    - 'export PATH={{ go_root }}/bin:$PATH'
+    - 'export PATH={{ go_path }}/bin:$PATH'
+- name: Create go code folder
+  file:
+    dest={{ go_path }}/src/github.com/{{ github_user }}
+    state=directory
+    recurse=yes
+    owner=vagrant
+    group=vagrant
+- name: Install gocode
+  command: >
+      go get -u github.com/nsf/gocode
+  environment:
+      GOPATH: "{{ go_path }}"
+      GOROOT: "{{ go_root }}"
+      PATH: "{{ go_root }}/bin:{{ go_path }}/bin:/usr/bin:/bin"
+- name: Check out vim-go
+  git:
+    repo=https://github.com/fatih/vim-go.git
+    dest=/home/vagrant/src/vim-go
+    update=yes
+- name: Ensure ~/.vim/bundle exists
+  file:
+    dest=/home/vagrant/.vim/bundle
+    state=directory
+- name: Symlink vim-go to .vim/bundle
+  file:
+    src=/home/vagrant/src/vim-go
+    dest=/home/vagrant/.vim/bundle/vim-go
+    state=link
