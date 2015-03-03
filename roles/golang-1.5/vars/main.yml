@@ -1,0 +1,4 @@
+---
+go_binary: /home/vagrant/opt/go/bin/go
+go_root: /home/vagrant/opt/go
+go_path: /home/vagrant/code/go

@@ -1,0 +1,20 @@
+---
+- name: Install apt packages needed for building Go 1.5
+  apt:
+    name={{ item }}
+  with_items:
+    - gcc
+- name: Create folder for Go 1.4
+  file:
+    dest=/home/vagrant/src/go1.4
+    state=directory
+- name: Check out Go 1.4
+  git:
+    repo=https://go.googlesource.com/go
+    dest=/home/vagrant/src/go1.4
+    version=release-branch.go1.4
+- name: Build Go 1.4
+  command:
+    ./make.bash
+    chdir=/home/vagrant/src/go1.4/src
+    creates=/home/vagrant/src/go1.4/bin/go
