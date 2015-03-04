@@ -1,5 +1,5 @@
-# Golang-Vagrant-Ansible
-*With Docker or Virtualbox as provider*
+# DevBox-Golong
+*Vagrant box backed by Docker or Virtualbox, with Ansible provisioning*
 
 A Vagrant box (Virtualbox or Docker as providers) with Ansible provisioning
 for setting up a Vim-based Golang development environment.
@@ -90,8 +90,8 @@ Note: Please see the "known issues" below though, about messages about  failed t
 #### Clone the github repository:
 
 ```bash
-git clone git@github.com:samuell/golang-vagrant-ansible
-cd golang-vagrant-ansible
+git clone git@github.com:samuell/devbox-golang
+cd devbox-golang
 ```
 
 #### Bring up the VM
