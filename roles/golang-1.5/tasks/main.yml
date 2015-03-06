@@ -33,7 +33,7 @@
     dest={{ go_root }}
 - name: Build the latest Go (1.5)
   shell:
-    ./all.bash
+    ./make.bash
     chdir={{ go_root }}/src
   environment:
     'GOROOT_BOOTSTRAP': "{{ go_root_bootstrap }}"
