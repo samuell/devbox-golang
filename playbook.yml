@@ -21,6 +21,10 @@
          - gdb
          - cgdb
          - bash-completion # Not included in the docker image
+         - make
+         - tree
+         - htop
+         - tmux
   roles:
       - { role: dotfiles, sudo: false }
       - { role: golang, sudo: false }
