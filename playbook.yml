@@ -25,6 +25,7 @@
          - tree
          - htop
          - tmux
+         - man-db
   roles:
       - { role: dotfiles, sudo: false }
       - { role: golang, sudo: false }
