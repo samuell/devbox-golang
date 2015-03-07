@@ -19,5 +19,5 @@
 - name: Compile YouCompleteMe binaries
   command: ./install.sh --clang-completer
     chdir={{ home }}/src/YouCompleteMe
-    creates={{ home }}/src/YouCompleteMe/python/ycm/youcompleteme.pyc
+    creates={{ home }}/src/YouCompleteMe/third_party/ycmd/ycm_core.so
 
