@@ -53,3 +53,4 @@
     src=/home/vagrant/src/vim-go
     dest=/home/vagrant/.vim/bundle/vim-go
     state=link
+# TODO: Add bitbucket.org/gotamer/gowatch for folder watching and running tests!
