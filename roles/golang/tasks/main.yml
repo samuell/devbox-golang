@@ -32,13 +32,16 @@
     recurse=yes
     owner=vagrant
     group=vagrant
-- name: Install gocode
+- name: Install some nice go packages
   command: >
-      go get -u github.com/nsf/gocode
+      go get -u {{ item }}
   environment:
       GOPATH: "{{ go_path }}"
       GOROOT: "{{ go_root }}"
       PATH: "{{ go_root }}/bin:{{ go_path }}/bin:/usr/bin:/bin"
+  with_items:
+      - github.com/nsf/gocode
+      - bitbucket.org/gotamer/gowatch
 - name: Check out vim-go
   git:
     repo=https://github.com/fatih/vim-go.git
