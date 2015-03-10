@@ -37,7 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     dkr.vm.provision :ansible do |ansible|
       ansible.playbook = "playbook.yml"
-      ansible.extra_vars = { ansible_ssh_user: 'root' }
+      ansible.extra_vars = { ansible_ssh_user: 'vagrant' }
       #ansible.verbose = "vvvv"
     end
     dkr.vm.synced_folder ".", "/vagrant"
