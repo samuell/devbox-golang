@@ -171,7 +171,7 @@ ssh-add ~/.ssh/id_rsa_<whateveryounamedit>
   ```bash
   sudo apt-get apparmor-utils
   sudo cat 'aa-complain /etc/apparmor.d/docker' >> /etc/rc.local
-  aa-complain /etc/apparmor.d/docker
+  sudo aa-complain /etc/apparmor.d/docker
   ```
   The problem seems to be that `ptrace` is not given access to the process otherwise.
 - There are some really red message from the docker daemon when running `vagrant halt`.
