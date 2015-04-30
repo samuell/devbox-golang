@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       ansible.playbook = "playbook.yml"
     end
     # Tell the user what to do next
-	vbox.vm.provision "shell", inline: "echo 'Finished! Now try logging in with: vagrant ssh docker'"
+	vbox.vm.provision "shell", inline: "echo 'Finished! Now try logging in with: vagrant ssh virtualbox'"
   end
 
   # --------------------------------------------------------------------
