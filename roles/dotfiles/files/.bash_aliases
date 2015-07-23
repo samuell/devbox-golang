@@ -31,6 +31,7 @@ alias aptu='sudo apt-get update'
 alias aptug='sudo apt-get upgrade'
 alias ubuntu_version='lsb_release -a'
 # Git
+alias t='tig'
 alias glog='git log --pretty=oneline|tig'
 alias gdiff='git diff|tig'
 alias gcommit='git commit'
