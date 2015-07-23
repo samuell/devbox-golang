@@ -168,11 +168,13 @@ ssh-add ~/.ssh/id_rsa_<whateveryounamedit>
 
 - GDB Breakpoints don't take, unless you follow the advice given [here](https://github.com/docker/docker/issues/7276#issuecomment-50436671).
   That is, in short, do this on your **Host machine**, if you run Ubuntu:
+
   ```bash
-  sudo apt-get apparmor-utils
-  sudo cat 'aa-complain /etc/apparmor.d/docker' >> /etc/rc.local
+  sudo apt-get install apparmor-utils
+  sudo echo 'aa-complain /etc/apparmor.d/docker' >> /etc/rc.local
   sudo aa-complain /etc/apparmor.d/docker
   ```
+
   The problem seems to be that `ptrace` is not given access to the process otherwise.
 - There are some really red message from the docker daemon when running `vagrant halt`.
   Everything seems to work as expected though (including the shutdown)
