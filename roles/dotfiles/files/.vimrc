@@ -9,6 +9,7 @@ set showmode
 set nowrap
 set hlsearch
 set shell=/bin/sh " Needed to get at least Go autocompletion to work
+set nu
 
 " Settings for using only tabs, not spaces, for indent
 set tabstop=4
