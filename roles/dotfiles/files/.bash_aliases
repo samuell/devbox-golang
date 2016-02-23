@@ -252,3 +252,8 @@ Commands for working with containers (instances of images):
     wait      Block until a container stops, then print its exit code
 EOM
 }
+
+# Count lines of code
+alias goloc="ls *.go | xargs cat | sed -r '/^(\s*\/\/.*)?$/d' | wc -l"
+# Recursive version
+alias golocr="find | grep -P '.go$' | xargs cat | sed -r '/^(\s*\/\/.*)?$/d' | wc -l"
