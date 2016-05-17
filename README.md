@@ -12,11 +12,11 @@ for setting up a Vim-based Golang development environment.
 
 - [Ubuntu 14.04 "trusty" LTS 64bit base image](http://www.ubuntu.com/)
 - [Go(lang) 1.6.2](http://golang.org/)
-- [Vim](https://github.com/Valloric/YouCompleteMe)
+- [Vim](http://www.vim.org/)
 - [Fatih's vim-go plugin](https://github.com/fatih/vim-go), providing syntax highlight, gocode integration for autocompletion, and more.
     - See the [vim-go](https://github.com/fatih/vim-go) README for more info on how you can easily enable additional included features.
 - [GoCode Go completion engine](https://github.com/nsf/gocode)
-- [Valloric's YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for as-you-type completion.
+- [Valloric's YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for as-you-type completion (NB: Requires uncommenting the YouCompleteMe role in playbook.yml!)
 - [Git](http://git-scm.com/)
 - [Tig - text mode interface to git](http://jonas.nitro.dk/tig/)
 - [gdb - the GNU debugger](http://www.gnu.org/software/gdb)
