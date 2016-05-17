@@ -6,7 +6,7 @@ for setting up a Vim-based Golang development environment.
 
 ![Screenshot](golang-vagrant-ansible.png)
 
-## Update: Optional build script of latest Go 1.5 with the new cross-compilation support now included!
+### Note: There are currently problems with the docker version of the script, so please use the virtualbox version until this is solved!
 
 As [blogged by Dave Cheney](http://dave.cheney.net/2015/03/03/cross-compilation-just-got-a-whole-lot-better-in-go-1-5), cross-compilation
 to different platforms is now (in the latest Go 1.5 development version) as simple as setting two environment variables and
