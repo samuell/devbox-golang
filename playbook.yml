@@ -4,6 +4,8 @@
   vars:
       home: /home/vagrant
       document_root: /vagrant
+      os: ubuntu
+      osversioncode: trusty
   pre_tasks:
       - name: Symlink sh to bash rather than dash
         file: src=/bin/bash dest=/bin/sh state=link force=true
@@ -30,3 +32,4 @@
       - { role: dotfiles, sudo: false }
       - { role: golang, sudo: false }
       - { role: youcompleteme, sudo: false } # Comment out this to save time!!
+      - { role: mesos, sudo: false }

@@ -1,0 +1,12 @@
+---
+- name: Add key for Mesosphere apt repo
+  sudo: true
+  apt_key: keyserver=keyserver.ubuntu.com id=E56151BF
+- name: Add Mesosphere apt repo
+  sudo: true
+  apt_repository: repo='deb http://repos.mesosphere.io/ubuntu trusty main' state=present
+- name: Install Mesos from Mesosphere apt repo
+  sudo: true
+  apt: name={{ item }} state=latest
+  with_items:
+    - mesos
