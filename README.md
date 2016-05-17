@@ -8,37 +8,6 @@ for setting up a Vim-based Golang development environment.
 
 ### Note: There are currently problems with the docker version of the script, so please use the virtualbox version until this is solved!
 
-As [blogged by Dave Cheney](http://dave.cheney.net/2015/03/03/cross-compilation-just-got-a-whole-lot-better-in-go-1-5), cross-compilation
-to different platforms is now (in the latest Go 1.5 development version) as simple as setting two environment variables and
-running go build!
-
-To let us laymen test this out easily, we have included an ansible role (aka "build script") for the latest Go 1.5
-in this repo. To activate it, just open up the `playbook.yml` file and uncomment the row `- golang-1.5`, and instead comment out
-the line saying `- golang`, before running `vagrant up docker` or `vagrant up virtualbox`.
-
-So, instead of looking like this:
-
-```yaml
-  roles:
-	- { role: dotfiles, sudo: false }
-    - { role: golang, sudo: false }
-   #- { role: golang-1.5, sudo: false }
-    - { role: youcompleteme, sudo: false } # Comment out this to save time!!
-```
-
-... it should look like this:
-
-```yaml
-  roles:
-	- { role: dotfiles, sudo: false }
-   #- { role: golang, sudo: false }
-    - { role: golang-1.5, sudo: false }
-    - { role: youcompleteme, sudo: false } # Comment out this to save time!!
-```
-Note: Please see the "known issues" below though, about messages about  failed tests, when building!
-
-(You might also consider commenting out the "YouCompleteMe" step to start with, if you want to play around with this quickly)
-
 ## Ingredients
 
 - [Ubuntu 14.04 "trusty" LTS 64bit base image](http://www.ubuntu.com/)
