@@ -11,7 +11,7 @@ for setting up a Vim-based Golang development environment.
 ## Ingredients
 
 - [Ubuntu 14.04 "trusty" LTS 64bit base image](http://www.ubuntu.com/)
-- [Go(lang) 1.4.2](http://golan.org/)
+- [Go(lang) 1.6.2](http://golang.org/)
 - [Vim](https://github.com/Valloric/YouCompleteMe)
 - [Fatih's vim-go plugin](https://github.com/fatih/vim-go), providing syntax highlight, gocode integration for autocompletion, and more.
     - See the [vim-go](https://github.com/fatih/vim-go) README for more info on how you can easily enable additional included features.
