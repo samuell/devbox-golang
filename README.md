@@ -16,11 +16,15 @@ for setting up a Vim-based Golang development environment.
 - [Fatih's vim-go plugin](https://github.com/fatih/vim-go), providing syntax highlight, gocode integration for autocompletion, and more.
     - See the [vim-go](https://github.com/fatih/vim-go) README for more info on how you can easily enable additional included features.
 - [GoCode Go completion engine](https://github.com/nsf/gocode)
-- [Valloric's YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for as-you-type completion (NB: Requires uncommenting the YouCompleteMe role in playbook.yml!)
 - [Git](http://git-scm.com/)
 - [Tig - text mode interface to git](http://jonas.nitro.dk/tig/)
 - [gdb - the GNU debugger](http://www.gnu.org/software/gdb)
 - [cgdb - Curses based user interface to gdb](https://cgdb.github.io)
+
+## Optional ingredients (Uncomment roles in playbook.yml)
+
+- [Valloric's YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for as-you-type completion (NB: Requires uncommenting the YouCompleteMe role in playbook.yml!)).
+- [Apache Mesos](http://mesos.apache.org) - An open source computer cluster manager. (UI on [localhost:5050](http://localhost:5050)).
 
 ## Prerequisites
 
