@@ -15,6 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
     vbox.vm.box = "ubuntu/trusty64"
     vbox.vm.network "forwarded_port", guest: 80, host: 8080
+    vbox.vm.network "forwarded_port", guest: 5050, host: 5050
     vbox.vm.provision :ansible do |ansible|
       ansible.playbook = "playbook.yml"
     end
