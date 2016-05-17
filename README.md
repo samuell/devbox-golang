@@ -21,7 +21,9 @@ for setting up a Vim-based Golang development environment.
 - [gdb - the GNU debugger](http://www.gnu.org/software/gdb)
 - [cgdb - Curses based user interface to gdb](https://cgdb.github.io)
 
-## Optional ingredients (Uncomment roles in playbook.yml)
+## Optional ingredients
+
+*Uncomment roles in playbook.yml to enable these.*
 
 - [Valloric's YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for as-you-type completion (NB: Requires uncommenting the YouCompleteMe role in playbook.yml!)).
 - [Apache Mesos](http://mesos.apache.org) - An open source computer cluster manager. (UI on [localhost:5050](http://localhost:5050)).
