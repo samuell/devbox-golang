@@ -1,5 +1,5 @@
 ---
-go_version: 1.6.2
+go_version: 1.8
 go_archive_file: go{{ go_version }}.linux-amd64.tar.gz
 go_binary: /home/vagrant/opt/go/bin/go
 go_root: /home/vagrant/opt/go
