@@ -2,11 +2,15 @@
 - hosts: all
   become: true
   vars:
-      home: /home/vagrant
+      home: /home/ubuntu
       document_root: /vagrant
       os: ubuntu
-      osversioncode: trusty
+      user: ubuntu
+      osversioncode: xenial
+  gather_facts: no
   pre_tasks:
+      - name: 'install python2'
+        raw: sudo apt-get -y install python-simplejson
       - name: Symlink sh to bash rather than dash
         file: src=/bin/bash dest=/bin/sh state=link force=true
       - name: Update apt cache and optionally upgrade

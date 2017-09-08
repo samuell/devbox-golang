@@ -16,7 +16,7 @@ if [ -f ~/.bash_aliases_local ]; then
 fi
 
 export PS1="[\u \W]$ "
-export GOROOT=/home/vagrant/opt/go
-export GOPATH=/home/vagrant/code/go
-export PATH=/home/vagrant/opt/go/bin:$PATH
-export PATH=/home/vagrant/code/go/bin:$PATH
+export GOROOT=~/opt/go
+export GOPATH=~/code/go
+export PATH=~/opt/go/bin:$PATH
+export PATH=~/code/go/bin:$PATH

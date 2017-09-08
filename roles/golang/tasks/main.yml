@@ -10,16 +10,16 @@
       dest={{ document_root }}/{{ go_archive_file }}
 - name: Create ~/opt folder
   file:
-      path=/home/vagrant/opt
+      path={{ home }}/opt
       state=directory
 - name: Unpack the Go binary distribution
   unarchive:
       copy=no
       src={{ document_root }}/{{ go_archive_file }}
-      dest=/home/vagrant/opt
-      creates=/home/vagrant/opt/go
+      dest={{ home }}/opt
+      creates={{ home }}/opt/go
 - name: Add go path settings in .bashrc_mods
-  lineinfile: dest=/home/vagrant/.bashrc_mods line="{{ item }}" insertafter=EOF
+  lineinfile: dest={{ home }}/.bashrc_mods line="{{ item }}" insertafter=EOF
   with_items:
     - 'export GOROOT={{ go_root }}'
     - 'export GOPATH={{ go_path }}'
@@ -30,8 +30,8 @@
     dest={{ go_path }}/src/github.com
     state=directory
     recurse=yes
-    owner=vagrant
-    group=vagrant
+    owner={{ user }}
+    group={{ user }}
 - name: Install some nice go packages
   command: >
       go get -u {{ item }}
@@ -45,15 +45,15 @@
 - name: Check out vim-go
   git:
     repo=https://github.com/fatih/vim-go.git
-    dest=/home/vagrant/src/vim-go
+    dest={{ home }}/src/vim-go
     update=yes
 - name: Ensure ~/.vim/bundle exists
   file:
-    dest=/home/vagrant/.vim/bundle
+    dest={{ home }}/.vim/bundle
     state=directory
 - name: Symlink vim-go to .vim/bundle
   file:
-    src=/home/vagrant/src/vim-go
-    dest=/home/vagrant/.vim/bundle/vim-go
+    src={{ home }}/src/vim-go
+    dest={{ home }}/.vim/bundle/vim-go
     state=link
 # TODO: Add bitbucket.org/gotamer/gowatch for folder watching and running tests!
