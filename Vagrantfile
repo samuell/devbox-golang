@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # --------------------------------------------------------------------
   # Definitions for the VirtualBox machine
   # --------------------------------------------------------------------
-  config.vm.define "virtualbox", autostart: false do |vbox|
+  config.vm.define "virtualbox", autostart: true do |vbox|
     vbox.vm.provider "virtualbox" do |v|
       v.memory = 2048
       v.cpus = 2
