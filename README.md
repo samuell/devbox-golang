@@ -10,7 +10,7 @@ for setting up a Vim-based Golang development environment.
 
 ## Ingredients
 
-- [Ubuntu 14.04 "trusty" LTS 64bit base image](http://www.ubuntu.com/)
+- [Ubuntu 16.04 "xenial" LTS 64bit base image](http://www.ubuntu.com/)
 - [Go(lang) 1.6.2](http://golang.org/)
 - [Vim](http://www.vim.org/)
 - [Fatih's vim-go plugin](https://github.com/fatih/vim-go), providing syntax highlight, gocode integration for autocompletion, and more.
